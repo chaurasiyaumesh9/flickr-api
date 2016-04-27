@@ -27,7 +27,8 @@
     "passport-facebook": "~2.0.0",
     "passport-google-oauth": "^1.0.0",
     "passport-local": "~1.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "prerender-node": "^2.2.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

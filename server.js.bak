@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true })) // parse application/x-www-fo
 
 //app.use(require('prerender-node').set('prerenderServiceUrl', 'https://prerender-test402.herokuapp.com/').set('prerenderToken', 'fnu9gwOPhdT0b30IXLI8'));
 
-app.use(require('prerender-node').set('prerenderServiceUrl', 'http://service.prerender.io/').set('prerenderToken', 'YmLBrvoJV5ceDm1OSOvQ'));
+app.use(require('prerender-node').set('prerenderServiceUrl', 'http://service.prerender.io/').set('prerenderToken', 'fnu9gwOPhdT0b30IXLI8'));
 
 
 app.use(express.static( path.join(__dirname + '/public')));
