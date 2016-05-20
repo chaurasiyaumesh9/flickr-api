@@ -19,5 +19,5 @@ var app = angular.module('superheroApp', ['addSuperheroCtrl', 'galleryCtrl','det
         //Add the API key to use filestack service
         filepickerProvider.setKey('AkfhQ0buSQ8ewXgJORaVKz');
 
-		$locationProvider.html5Mode(false).hashPrefix('!');
+		$locationProvider.html5Mode(true).hashPrefix('!');
 });

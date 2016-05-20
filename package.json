@@ -37,6 +37,7 @@
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.4.1",
+    "grunt-html-snapshot": "^0.6.1",
     "grunt-nodemon": "*",
     "grunt-open": "^0.2.3",
     "grunt-parallel": "^0.4.1"

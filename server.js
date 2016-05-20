@@ -15,6 +15,13 @@ var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
+/*var prerender =
+    require('prerender-node').set('prerenderServiceUrl', 'http://samura.pt:2999');
+app.use(prerender);
+
+*/
+app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000'));//.set('prerenderToken', 'YmLBrvoJV5ceDm1OSOvQ'));
+
 
 var port = process.env.PORT || 8000;
 
@@ -24,11 +31,12 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json());            
 app.use(bodyParser.json({ type: 'application/json'}));  
-app.use(bodyParser.urlencoded({ extended: true })) // parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false })) // parse application/x-www-form-urlencoded
 
 //app.use(require('prerender-node').set('prerenderServiceUrl', 'https://prerender-test402.herokuapp.com/').set('prerenderToken', 'fnu9gwOPhdT0b30IXLI8'));
 
-app.use(require('prerender-node').set('prerenderServiceUrl', 'http://service.prerender.io/').set('prerenderToken', 'YmLBrvoJV5ceDm1OSOvQ'));
+//app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/').set('prerenderToken', 'YmLBrvoJV5ceDm1OSOvQ'));
+//app.use(require('prerender-node').set('prerenderToken', 'YmLBrvoJV5ceDm1OSOvQ'));
 
 
 app.use(express.static( path.join(__dirname + '/public')));
@@ -37,6 +45,10 @@ app.use('/bower_components',  express.static(path.join(__dirname + '/bower_compo
 var superhero = require('./app/routes/superhero')();
 app.route('/superhero').post(superhero.post).get(superhero.getAll);
 app.route('/superhero/:id').get(superhero.getOne);
+
+app.get('*', function(req, res){
+	res.sendfile('./public/index.html');
+});
 
 app.set('views', __dirname + '/views');
 app.set('view engine','ejs');
