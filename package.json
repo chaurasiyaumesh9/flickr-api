@@ -18,7 +18,7 @@
     "googleapis": "^4.0.0",
     "method-override": "~1.0.0",
     "moment": "^2.11.2",
-    "mongoose": "^4.4.5",
+    "mongoose": "^5.7.6",
     "morgan": "~1.0.0",
     "multer": "^1.1.0",
     "nodemon": "^1.9.1",
